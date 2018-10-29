@@ -85,6 +85,10 @@ NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 foobar-hhytbcx4   1         1         1            1           51s
 ```
 
+{{% notice warning %}}
+With `--minscale 0`, a function will experience **long** cold-start time since it takes time for executor to create/scale deployment to 1 replica.
+{{% /notice %}}
+
 #### Autoscaling
 
 Let's create a function to demonstrate the autoscaling behaviour in Fission. We create a simple function which outputs "Hello World" in using NodeJS. We have kept the CPU request and limit purposefully low to simulate the load and also kept the target CPU percent to 50%. 
